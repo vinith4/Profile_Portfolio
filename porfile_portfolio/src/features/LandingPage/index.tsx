@@ -5,8 +5,8 @@ import developer from "../../assets/developer.png"
 export default function LandingPage() {
     const [text, setText] = useState('');
     const [isDeleting, setIsDeleting] = useState(true);
-    const typingSpeed = 200; // The speed of typing (in milliseconds)
-    const deleteSpeed = 200; // The speed of deleting (in milliseconds)
+    const typingSpeed = 300; // The speed of typing (in milliseconds)
+    const deleteSpeed = 300; // The speed of deleting (in milliseconds)
     const delayAfterTyping = 300; // Delay after typing (in milliseconds)
     const delayAfterDeleting = 300; // Delay after deleting (in milliseconds)
     const words = [
@@ -15,18 +15,20 @@ export default function LandingPage() {
     ]; // Words to animate
     
     useEffect(() => {
-      let index = 12;
+      let index = 0;
+      let indexd = 0;
       let currentText = 'WEB DEVELOPER';
       let isComplete = false;
     
       const typeText = () => {
         if (!isComplete) {
-          if (!isDeleting) {
+          if (indexd===0) {
             currentText = words[index];
     
             if (index === words.length - 1) {
               setIsDeleting(true);
-              console.log(isDeleting);
+              indexd=12;
+             
               setTimeout(typeText, delayAfterDeleting);
             } else {
               index++;
@@ -38,6 +40,7 @@ export default function LandingPage() {
     
             if (index < 0) {
               setIsDeleting(false);
+              indexd=0;
               setTimeout(typeText, delayAfterTyping);
             } else {
               setTimeout(typeText, deleteSpeed);
@@ -45,6 +48,7 @@ export default function LandingPage() {
           }
     
           setText(currentText);
+          
         }
       };
     
@@ -56,7 +60,7 @@ export default function LandingPage() {
     }, []);
     
     
-    const colour ='blue';
+    const colour ='red';
     // console.log(colour);
     return (
         <div className={`bg-${colour}-100 my-6 mx-6 items-center `}>
