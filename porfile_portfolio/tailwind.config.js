@@ -9,7 +9,7 @@ export default {
     },
     keyframes: {
       slideRight: {
-        '0%': { transform: 'translateX(25%)' },
+        '0%': { transform: 'translateX(20%)' },
         '100%': { transform: 'translateX(0)' },
       },
       moveCircle: {
