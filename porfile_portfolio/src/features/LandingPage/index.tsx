@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import "./Landing.module.css"
-import developer from "../../assets/developer.png"
+import "./Landing.module.css";
+import developer from "../../assets/developer.png";
+import PrimaryBtn from '../../components/atom/button';
+import { useNavigate } from 'react-router-dom';
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(true);
   const typingSpeed = 300; // The speed of typing (in milliseconds)
@@ -13,7 +16,6 @@ export default function LandingPage() {
     "W", "WE", "WEB", "WEB ", "WEB D", "WEB DE", "WEB DEV", "WEB DEVE",
     "WEB DEVEL", "WEB DEVELO", "WEB DEVELOP", "WEB DEVELOPE", "WEB DEVELOPER"
   ]; // Words to animate
-
 
   useEffect(() => {
     let index = 0;
@@ -49,7 +51,6 @@ export default function LandingPage() {
         }
 
         setText(currentText);
-
       }
     };
 
@@ -59,49 +60,116 @@ export default function LandingPage() {
       clearTimeout();
     };
   }, []);
+
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
     setIsAnimated(true);
   }, []);
 
-  const colour = 'red';
-  // console.log(colour);
+  const handlePortfolio = () => {
+    navigate("/portfolio");
+  };
+
+  const handleAbout = () => {
+    navigate("/about");
+  };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className={`bg-blue-100 my-6 mx-6 items-center `}>
-      <div className='grid grid-cols-2 p-12'>
-        <div className={` flex flex-col self-center gap-6  animate-upwards transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className={` gap-12 text-lg transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h2 className=''>Hi,</h2>
+    <div>
+      {windowWidth < 628 ? (
+        <div className={`bg-blue-100 h-screen justify-center items-center flex `}>
+          <div className='flex flex-row justify-between md:p-6 p-3 lg:p-12'>
+            <div className={`flex flex-col self-center gap-6 animate-upwards transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className={`gap-12 text-lg transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h2 className=''>Hi,</h2>
+              </div>
+              <div className={`text-black drop-shadow-lg shadow-blue-600 transform lg:text-5xl md:text-3xl text-lg transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h1>VINITHKUMAR S</h1>
+              </div>
+              <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h2 className={`relative inline-flex gap-1 text-blue-500   `}>
+                  <span className='lg:text-3xl md:text-3xl text-lg'>{text}</span>
+                  <span className={`absolute top-0 -right-1 rounded-sm h-full w-0.5 bg-blue-500 animate-blink`}></span>
+                </h2>
+              </div>
+              <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} flex row gap-6`}>
+                <div>
+                  <PrimaryBtn
+                    title="About Me"
+                    onClick={handleAbout}
+                  />
+                </div>
+                <div>
+                  <PrimaryBtn
+                    title="Portfolio"
+                    onClick={handlePortfolio}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center pb-16">
+              <div className={`w-28 h-28 md:w-60 md:h-60 lg:w-96 lg:h-96 pl-3 rounded-full bg-blue-500 border-2 border-blue-500-content animate-circle order-1`}></div>
+              <div className="animate-slideRight absolute pt-8 pl-4 order-2">
+                <img src={developer} className="lg:w-96 md:w-60 w-28 z-10" alt='Developer' />
+              </div>
+            </div>
           </div>
-          <div className={`text-black drop-shadow-lg shadow-blue-600 transform text-5xl transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-  <h1>VINITHKUMAR S</h1>
-</div>
-
-          <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h2 className={`relative inline-flex gap-1 text-blue-500   `}>
-              <span className='text-3xl'>{text}</span>
-              <span className={`absolute top-0 -right-1 rounded-sm h-full w-0.5  bg-blue-500     animate-blink`}></span>
-            </h2>
-          </div>
-          <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <button className='btn border border-b-2 bg-blue-500 px-3 py-1 text-white rounded-lg mr-8 hover:bg-white hover:border-blue-500  hover:text-blue-500 '><p className={`transform transition-transform duration-500 ${'hover:' ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>Contact</p></button>
-            <button className='btn border border-b-2 bg-blue-500 px-3 py-1 text-white rounded-lg mr-8 hover:bg-white hover:border-blue-500 hover:animate-bounce hover:text-blue-500 '>Portfolio</button>
-          </div>
-          <div className="group">
-  <button className="transform transition-transform duration-500 group-hover:-translate-y-10 group-hover:opacity-0">
-    Button
-  </button>
-</div>
         </div>
-        <div className="flex justify-center pb-16 ">
-          <div className={`w-96 h-96   pl-3 rounded-full  bg-blue-500  border-2 border-blue-300 animate-circle order-1`}></div>
-          <div className="animate-slideRight absolute pt-8 pl-4 order-2">
-            <img src={developer} className="w-96 z-10" alt='Developer' />
+      ) : (
+        <div className={`bg-blue-100 h-screen justify-center items-center self-center `}>
+          <div className='flex flex-row justify-between md:p-6 p-3 lg:p-12'>
+            <div className={`flex flex-col self-center gap-6 animate-upwards transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className={`gap-12 text-lg transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h2 className=''>Hi,</h2>
+              </div>
+              <div className={`text-black drop-shadow-lg shadow-blue-600 transform lg:text-5xl md:text-3xl text-lg transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h1>VINITHKUMAR S</h1>
+              </div>
+              <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                <h2 className={`relative inline-flex gap-1 text-blue-500   `}>
+                  <span className='lg:text-3xl md:text-3xl text-lg'>{text}</span>
+                  <span className={`absolute top-0 -right-1 rounded-sm h-full w-0.5 bg-blue-500 animate-blink`}></span>
+                </h2>
+              </div>
+              <div className={`transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} flex row gap-6`}>
+                <div>
+                  <PrimaryBtn
+                    title="About Me"
+                    onClick={handleAbout}
+                  />
+                </div>
+                <div>
+                  <PrimaryBtn
+                    title="Portfolio"
+                    onClick={handlePortfolio}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center pb-16">
+              <div className={`w-28 h-28 md:w-60 md:h-60 lg:w-96 lg:h-96 pl-3 rounded-full bg-blue-500 border-2 border-blue-500-content animate-circle order-1`}></div>
+              <div className="animate-slideRight absolute pt-8 pl-4 order-2">
+                <img src={developer} className="lg:w-96 md:w-60 w-28 z-10" alt='Developer' />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
+      )}
     </div>
-  )
+  );
 }
