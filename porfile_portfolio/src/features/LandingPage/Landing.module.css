@@ -14,3 +14,21 @@
     animation: blink 1s step-end infinite;
   }
   
+  /* Initial position */
+.bottom-to-top {
+  transform: translateY(0);
+}
+
+/* Animation */
+.animate-bottom-to-top {
+  animation: bottomToTop 1s forwards;
+}
+
+@keyframes bottomToTop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}

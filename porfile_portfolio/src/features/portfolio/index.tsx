@@ -10,7 +10,7 @@ export default function Portfolio ()  {
     <div>
     <PrimaryCard
     image="https://theskymalviya-portfolio.netlify.app/img/portfolio3.jpg"
-    title="Smart Wellness"
+    title="Smart Eco-friendly Wellness Monitor for New Normal"
     onClick={handleclick}
     />
   </div>
