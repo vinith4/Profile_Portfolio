@@ -1,4 +1,4 @@
-import React from 'react';
+
 import PrimaryBtn from '../../components/atom/button';
 import { saveAs } from 'file-saver';
 import vinith from "../../assets/Vinithkumar_S.pdf";

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import PrimaryCard from '../../components/molecule/card'
 
 export default function Portfolio ()  {
