@@ -3,7 +3,7 @@ import Modal from "react-modal";
 
 const ToggleButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const [, setIsChecked] = useState(false);
 
   const handleToggle = () => {
     setIsChecked((prev) => !prev);
