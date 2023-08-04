@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import "./Landing.module.css";
 import developer from "../../assets/developer.png";
 import PrimaryBtn from '../../components/atom/button';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function LandingPage() {
   const navigate = useNavigate();
   const [text, setText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(true);
+ 
   const typingSpeed = 300; // The speed of typing (in milliseconds)
   const deleteSpeed = 300; // The speed of deleting (in milliseconds)
   const delayAfterTyping = 300; // Delay after typing (in milliseconds)
@@ -22,44 +22,45 @@ export default function LandingPage() {
     let indexd = 0;
     let currentText = 'WEB DEVELOPER';
     let isComplete = false;
-
+    let timerId: number | undefined; // Variable to store the timer identifier
+  
     const typeText = () => {
       if (!isComplete) {
         if (indexd === 0) {
           currentText = words[index];
-
+  
           if (index === words.length - 1) {
-            setIsDeleting(true);
+       
             indexd = 12;
-
-            setTimeout(typeText, delayAfterDeleting);
+            timerId = setTimeout(typeText, delayAfterDeleting); // Store the timer identifier
           } else {
             index++;
-            setTimeout(typeText, typingSpeed);
+            timerId = setTimeout(typeText, typingSpeed); // Store the timer identifier
           }
         } else {
           currentText = words[index];
           index--;
-
+  
           if (index < 1) {
-            setIsDeleting(false);
+        
             indexd = 0;
-            setTimeout(typeText, delayAfterTyping);
+            timerId = setTimeout(typeText, delayAfterTyping); // Store the timer identifier
           } else {
-            setTimeout(typeText, deleteSpeed);
+            timerId = setTimeout(typeText, deleteSpeed); // Store the timer identifier
           }
         }
-
+  
         setText(currentText);
       }
     };
-
+  
     typeText();
-
+  
     return () => {
-      clearTimeout();
+      clearTimeout(timerId); // Clear the timeout when the component is unmounted
     };
   }, []);
+  
 
   const [isAnimated, setIsAnimated] = useState(false);
 
