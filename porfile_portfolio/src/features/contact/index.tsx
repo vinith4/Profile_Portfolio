@@ -40,7 +40,7 @@ export default function Contact () {
  
 
   return (
-    <div><section className="bg-white dark:bg-gray-900">
+    <div><section className="">
     <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Me</h2>
         <form action="#" className="space-y-8">

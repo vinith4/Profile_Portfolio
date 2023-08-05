@@ -4,11 +4,13 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import Portfolio from '../features/portfolio'
 import About from '../features/about'
 import Contact from '../features/contact'
+import ToggleButton from '../components/atom/toggleButton'
 
 export default function HomeRouter  () {
   return (
     <div>
         <BrowserRouter>
+        <ToggleButton />
         <Routes>
             <Route path="/" element={<LandingPage/>}></Route>
             <Route path="/portfolio" element={<Portfolio/>}></Route>
