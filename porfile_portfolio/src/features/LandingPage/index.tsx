@@ -3,7 +3,7 @@ import "./Landing.module.css";
 import developer from "../../assets/developer.png";
 import PrimaryBtn from '../../components/atom/button';
 import { useNavigate } from 'react-router-dom';
-import ToggleButton from '../../components/atom/toggleButton';
+
 
 export default function LandingPage() {
   const navigate = useNavigate();

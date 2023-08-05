@@ -4,16 +4,16 @@ import { saveAs } from 'file-saver';
 import vinith from "../../assets/Vinithkumar_S.pdf";
 import { useNavigate } from 'react-router-dom';
 import developer from "../../assets/developer.png";
-import {
-  java,
-  javascript,
-  python,
-  firebase,
-  html,
-  css,
-  react,
-  spring
-} from '../../assets/programing_language';
+import java from "../../assets/programing_language/java.png";
+import javascript from "../../assets/programing_language/js.png";
+import python from "../../assets/programing_language/python.png";
+import firebase from "../../assets/programing_language/firebase.png";
+import spring from "../../assets/programing_language/spring.png";
+import html from "../../assets/programing_language/html.png";
+import css from "../../assets/programing_language/css.png";
+import react from "../../assets/programing_language/react.png";
+
+
 
 
 export default function About() {
