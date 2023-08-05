@@ -1,11 +1,12 @@
-
+import styles from "./about.module.css";
 import PrimaryBtn from '../../components/atom/button';
 import { saveAs } from 'file-saver';
 import vinith from "../../assets/Vinithkumar_S.pdf";
 import { useNavigate } from 'react-router-dom';
+import developer from "../../assets/developer.png";
 
 export default function About() {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const handleDownload = () => {
     const documentUrl = vinith;
     const fileName = 'Vinithkumar_S.pdf';
@@ -13,20 +14,100 @@ export default function About() {
     saveAs(documentUrl, fileName);
   };
 
-  const hangleContact = () =>{
-navigate("/contact")
+  const hangleContact = () => {
+    navigate("/contact")
   }
 
+  const educationDetails = [
+    {
+      title: "B.E in Computer Science and Engineering",
+      location: "KPR Institute of Engineering and Technology, Coimbatore",
+      duration: "2019 - 2023",
+      details: ["CGPA: 8.25"],
+    },
+    {
+      title: "12th Tamilnadu State Board",
+      location: "Ponnu Matric Higher Secondary School, Dharapuram",
+      duration: "2017 - 2019",
+      details: ["Percentage: 77.0%"],
+    },
+    {
+      title: "10th Tamilnadu State Board",
+      location: "Ponnu Matric Higher Secondary School, Dharapuram",
+      duration: "2016 - 2017",
+      details: ["Percentage: 90.2%"],
+    },
+  ];
+
+
   return (
-    <div>
-      <PrimaryBtn
-        title="Resume"
-        onClick={handleDownload}
-      />
-      <PrimaryBtn
-        title="Contact"
-       onClick={hangleContact}
-      />
+    <div className='p-12 sm:fixed'>
+      <div className='pb-12'>
+        <h1 className='text-center text-2xl md:text-4xl'>About Me</h1>
+      </div>
+      <div className='flex flex-col sm:flex-row gap-12'>
+        <div className=''>
+          <div className="flex justify-center snap-center">
+            <div className={`w-52 h-64 md:w-60 md:h-72 lg:w-72 lg:h- pt-9 pl-3 rounded-lg bg-blue-500 border-2 border-blue-200`}></div>
+            <div className=" absolute pt-9  pr-1 md:pr-0 md:rounded-lg order-2 md:bg-blue-500 ">
+              <img src={developer} className="lg:w-72 md:w-60 w-52 z-10" alt='Developer' />
+            </div>
+          </div>
+        </div>
+        {/* Add the scrollable div with a fixed height */}
+        <div className={`flex  flex-col sm:flex-row sm:flex-wrap sm:overflow-y-auto sm:max-h-[400px] ${"hide-scrollbar"}`}>
+          <div>
+            <p>
+              I'm Vinithkumar S, a passionate Java Full-Stack Developer with a background in Electronics and Communication Engineering. I enjoy coding on web pages, combining logic and creative design to craft eye-catching, accessible, and user-friendly websites and applications.
+            </p>
+            <br />
+            <p>
+              I believe in promoting inclusivity and diversity in the industry through representation. During my college days, I worked on exciting IoT projects, deepening my understanding of technology's potential to shape the world.
+            </p>
+            <br />
+            <p>
+              Now, I'm eager to take the next leap in my career and contribute to the success of the right company. If you're looking for a dedicated and innovative developer to add to your team, I'd be thrilled to hear from you. Let's create remarkable solutions together!
+            </p>
+          </div>
+          <div>
+            {/* <hr className="mt-4 " /> */}
+            <p className="primary_txt fs-1 mt-4">
+              <strong>Education Details</strong>
+            </p>
+            <div className={`${styles.timeline} pl-2`}>
+              {educationDetails.map((education, index) => (
+                <div key={index} className={styles.timeline_item}>
+                  <div className={styles.timeline_content}>
+                    <h4 className="fs-3 primary_txt">{education.title}</h4>
+                    <p className="primary_txt">{education.location}</p>
+                    <p className="secondary_txt">{education.duration}</p>
+                    <ul>
+                      {education.details.map((detail, idx) => (
+                        <li className="secondary_txt" key={idx}>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div>
+              <div>
+                <PrimaryBtn
+                  title="Resume"
+                  onClick={handleDownload}
+                />
+                <PrimaryBtn
+                  title="Contact"
+                  onClick={hangleContact}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   );
 }
