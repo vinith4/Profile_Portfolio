@@ -1521,7 +1521,7 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"
   "version" "0.14.0"
 
-"react-router-dom@^6.14.1":
+"react-router-dom@^6.14.2":
   "integrity" "sha512-5pWX0jdKR48XFZBuJqHosX3AAHjRAzygouMTyimnBPOLdY3WjzUSKhus2FVMihUFWzeLebDgr4r8UeQFAct7Bg=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.14.2.tgz"
   "version" "6.14.2"

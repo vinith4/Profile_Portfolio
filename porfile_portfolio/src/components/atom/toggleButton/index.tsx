@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 const ToggleButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,10 @@ const ToggleButton: React.FC = () => {
   const handleToggle = () => {
     setIsChecked((prev) => !prev);
     setIsOpen((prev) => !prev);
+  };
+
+  const handleCloseMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -32,12 +37,43 @@ const ToggleButton: React.FC = () => {
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         className="Modal fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white border rounded-lg p-6 shadow-lg"
-        overlayClassName="Overlay fixed top-0 left-0 w-full h-full bg-black opacity-50 flex justify-center items-center"
+        overlayClassName="Overlay fixed top-0 left-0 w-full h-full bg-black opacity-80 flex justify-center items-center"
       >
         {/* Your modal content goes here */}
-        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          {/* ... (the rest of your menu items) ... */}
-        </ul>
+        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+      <li>
+        <div
+          onClick={handleCloseMenu}
+          className="cursor-pointer hover:text-blue-500 transition-colors duration-300"
+        >
+          <Link to="/home">Home</Link>
+        </div>
+      </li>
+      <li>
+        <div
+          onClick={handleCloseMenu}
+          className="cursor-pointer hover:text-blue-500 transition-colors duration-300"
+        >
+          <Link to="/portfolio">Portfolio</Link>
+        </div>
+      </li>
+      <li>
+        <div
+          onClick={handleCloseMenu}
+          className="cursor-pointer hover:text-blue-500 transition-colors duration-300"
+        >
+          <Link to="/contact">Contact</Link>
+        </div>
+      </li>
+      <li>
+        <div
+          onClick={handleCloseMenu}
+          className="cursor-pointer hover:text-blue-500 transition-colors duration-300"
+        >
+          <Link to="/about">About</Link>
+        </div>
+      </li>
+    </ul>
       </Modal>
     </div>
   );

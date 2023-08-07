@@ -141,7 +141,7 @@ export default function LandingPage() {
           <div className='flex flex-row justify-between md:p-6 p-3 lg:p-12'>
             <div className={`flex flex-col self-center gap-6 animate-upwards transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className={`gap-12 text-lg `}>
-                <h2 className=''>Hi,</h2>
+                <h2 className=''>Hello,Im</h2>
               </div>
               <div className={`text-black drop-shadow-lg shadow-blue-600 transform lg:text-5xl md:text-3xl text-lg `}>
                 <h1>VINITHKUMAR S</h1>
