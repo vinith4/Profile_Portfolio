@@ -28,6 +28,7 @@ export default function HomeRouter  () {
         <BrowserRouter>
         <ToggleButton />
         <Routes>
+            <Route path="/" element={<LandingPage/>}></Route>
             <Route path="/home" element={<LandingPage/>}></Route>
             <Route path="/portfolio" element={<Portfolio/>}></Route>
             <Route path="/about" element={<About/>}></Route>
