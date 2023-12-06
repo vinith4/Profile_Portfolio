@@ -6,6 +6,7 @@ import smartWellness from "../../assets/project_image/smart wellness system.jpeg
 import cabin from "../../assets/project_image/cabin.jpeg"
 import cabinReport from "../../assets/project_image/Main report.pdf"
 import { saveAs } from 'file-saver';
+import styles from "./portfolio.module.css"
 
 export default function Portfolio() {
 
@@ -37,7 +38,7 @@ export default function Portfolio() {
   return (
     <div>
       <div className='pb-12'>
-        <h1 className='text-center text-2xl md:text-4xl'>Recent Works</h1>
+        <h1 className='text-center text-2xl md:text-4xl'><span className={styles.custom_text_shadow} >Recent Works</span></h1>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-8 gap-8'>
 

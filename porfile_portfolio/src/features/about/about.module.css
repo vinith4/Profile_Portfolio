@@ -91,3 +91,7 @@
   .skill_box:hover .tooltip {
     opacity: 1;
   }
+
+  .custom_text_shadow {
+    text-shadow: 2px 3px 6px rgba(51, 51, 249, 0.5); /* Blue text shadow */
+  }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import "./Landing.module.css";
+import styles from"./Landing.module.css";
 import developer from "../../assets/developer.png";
 import PrimaryBtn from '../../components/atom/button';
 import { useNavigate } from 'react-router-dom';
@@ -100,10 +100,10 @@ export default function LandingPage() {
           <div className='flex flex-col md:flex-row md:p-6 p-3 lg:p-12 gap-6 '>
             <div className={`flex flex-col self-center gap-6 animate-upwards order-2 sm:order-1 transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className={`gap-12 text-lg `}>
-                <h2 className='text-shadow font-extralight'>Hello,Im</h2>
+                <h2 className='text-shadow font-sans'>Hello,Im</h2>
               </div>
               <div className="text-black lg:text-5xl md:text-3xl text-lg " >
-                <h1 className='text-shadow-[0_4px_8px_#6366f1]'> VINITHKUMAR S</h1>
+                <h1 className={styles.custom_text_shadow}> VINITHKUMAR S</h1>
               </div>
               <div className={``}>
                 <h2 className={`relative inline-flex gap-1 text-blue-500   `}>
@@ -142,10 +142,10 @@ export default function LandingPage() {
           <div className='flex flex-row justify-between md:p-6 p-3 lg:p-12'>
             <div className={`flex flex-col self-center gap-6 animate-upwards transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className={`gap-12 text-lg `}>
-                <h2 className=''>Hello,Im</h2>
+                <h2 className='font-serif'>Hello,Im</h2>
               </div>
               <div className={`text-black font-sans lg:text-5xl md:text-3xl text-lg text-shadow-md`}>
-                <h1 className=''>VINITHKUMAR S</h1>
+                <h1 className={styles.custom_text_shadow}>VINITHKUMAR S</h1>
               </div>
 
               <div className={``}>

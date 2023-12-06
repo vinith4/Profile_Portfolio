@@ -5,6 +5,7 @@ import linkedin from "../../assets/linkedin.svg"
 import instragram from "../../assets/Instagram.svg"
 import twitter from "../../assets/twitter.svg"
 import github from "../../assets/github.svg"
+import styles from "./contact.module.css"
 
 export default function Contact() {
   const handleSendEmail = () => {
@@ -46,7 +47,7 @@ export default function Contact() {
   return (
     <div><section className="">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 ">Contact Me</h2>
+        <h2 className="mb-4 text-4xl tracking-tight  text-center text-gray-900 "><span className={styles.custom_text_shadow} >Contact Me</span></h2>
         <form action="#" className="space-y-8">
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>

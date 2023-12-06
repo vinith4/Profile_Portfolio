@@ -64,7 +64,7 @@ export default function About() {
   return (
     <div className='p-8 sm:fixed '>
       <div className='pb-12'>
-        <h1 className='text-center text-2xl md:text-4xl'>About Me</h1>
+        <h1 className='text-center text-2xl md:text-4xl'><span className={styles.custom_text_shadow}>About Me</span></h1>
       </div>
       <div className='flex flex-col sm:flex-row gap-12'>
         <div className=''>
