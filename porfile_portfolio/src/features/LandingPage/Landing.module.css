@@ -9,7 +9,9 @@
       opacity: 1;
     }
   }
-  
+  .custom-text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.5); /* Blue text shadow */
+  }
   .animate-blink {
     animation: blink 1s step-end infinite;
   }
