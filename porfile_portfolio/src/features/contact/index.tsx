@@ -50,7 +50,7 @@ export default function Contact() {
         <form action="#" className="space-y-8">
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
-            <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-500 focus:border-secondary-500 block w-full p-2.5 " placeholder="name@flowbite.com" required />
+            <input type="email" id="email" onChange={(e) => setEmail(e.target.value)} className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary-500 focus:border-secondary-500 block w-full p-2.5 " placeholder="name@gmail.com" required />
           </div>
           <div>
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
@@ -62,21 +62,23 @@ export default function Contact() {
           </div>
           <div>
             <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 ">Subject</label>
-            <input type="text" id="subject" onChange={(e) => setSubject(e.target.value)} className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-secondary-500 focus:border-secondary-500 " placeholder="Let us know how we can help you" required />
+            <input type="text" id="subject" onChange={(e) => setSubject(e.target.value)} className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-secondary-500 focus:border-secondary-500 " placeholder="Subject" required />
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900dark:text-gray-400">Your message</label>
             <textarea id="message" rows={6} onChange={(e) => setMessage(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-secondary-500 focus:border-secondary-500 " placeholder="Leave a comment..."></textarea>
-          </div>
+          </div >
           <center>
+        <div className='justify-center items-center self-center pl-8'>
             <PrimaryBtn
               title="Send Message"
               onClick={handleSendEmail}
-
             />
-          </center>
+        </div>
+        </center>
         </form>
         <center>
+          
         <h2 className="mb-4 p-2 tracking-tight font-medium left-3 text-gray-900 ">Get in touch</h2>
         <div className='flex flex-row gap-3 justify-center'>
           <a href="https://www.instagram.com/vinithsvk/" target="_blank" rel="noopener noreferrer">
