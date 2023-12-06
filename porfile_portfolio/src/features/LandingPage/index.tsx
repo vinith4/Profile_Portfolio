@@ -94,16 +94,16 @@ export default function LandingPage() {
   return (
 
     <div className='hide-scrollbar'>
-      
+
       {windowWidth < 450 ? (
         <div className={` h-screen justify-center items-center  self-center `}>
           <div className='flex flex-col md:flex-row md:p-6 p-3 lg:p-12 gap-6 '>
             <div className={`flex flex-col self-center gap-6 animate-upwards order-2 sm:order-1 transform transition-transform duration-500 ${isAnimated ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className={`gap-12 text-lg `}>
-                <h2 className=''>Hello,Im</h2>
+                <h2 className='text-shadow shadow-indigo-500/50 font-extralight'>Hello,Im</h2>
               </div>
-              <div className={`text-black drop-shadow-lg shadow-blue-600 transform lg:text-5xl md:text-3xl text-lg `}>
-                <h1>VINITHKUMAR S</h1>
+              <div className="text-black lg:text-5xl md:text-3xl text-lg font-bold" >
+                <h1 className='text-shadow-[0_4px_8px_#6366f1]'> VINITHKUMAR S</h1>
               </div>
               <div className={``}>
                 <h2 className={`relative inline-flex gap-1 text-blue-500   `}>
@@ -127,10 +127,11 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="flex justify-center pb-16 order-1 m:order-2">
-              <div className={`w-52 h-52 md:w-60 md:h-60 lg:w-96 lg:h-96 pl-3 rounded-full bg-blue-500 border-2 border-blue-200 animate-circle order-1`}></div>
-              <div className="animate-slideRight absolute pt-8 pl-4 order-2">
-                <img src={developer} className="lg:w-96 md:w-60 w-52 z-10" alt='Developer' />
+              <div className="relative pt-8 pl-4">
+                <div className={`w-52 h-52 md:w-60 absolute md:h-60 lg:w-96 lg:h-96 pl-3 rounded-full bg-blue-500 border-2 border-blue-200 animate-circle order-1 z-50`}></div>
+                <img src={developer} className="lg:w-96 md:w-60 w-52 z-10 animate-slideRight" alt='Developer' />
               </div>
+
             </div>
           </div>
         </div>

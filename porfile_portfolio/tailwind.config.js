@@ -7,6 +7,11 @@ export default {
         slideRight: "slideRight 0.60s ease-in-out",
         circle: "moveCircle 0.60s ease-in-out",
       },
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       keyframes: {
         slideRight: {
           "0%": { transform: "translateX(20%)" },
